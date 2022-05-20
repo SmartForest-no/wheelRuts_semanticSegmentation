@@ -7,10 +7,10 @@ import geopandas as gpd
 import matplotlib.pyplot as plt
 import rasterio as rio
 import numpy as np
-from cv2 import cv2
+import cv2
 # load my functions
 #os.chdir("/home/datascience/utils")
-from scripts.tools import tile_ortho, predict_wheelRuts, mosaic_predictions_raster_semantic_seg
+from scripts.tools import tile_ortho, predict_wheelRuts, mosaic_predictions_raster_semantic_seg, file_mode, directory_mode
 
 
 if __name__ == '__main__':
