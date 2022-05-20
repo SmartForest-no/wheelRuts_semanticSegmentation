@@ -20,4 +20,10 @@ pip install -r requirements.txt
 ```
 
 # Usage
+## Input
+The algorithm takes as input one orthomosaic or a folder with several orthomosaics and
+
+## Output
+
+## How to run
 To run the segmentation on a new drone orthomosaic  
