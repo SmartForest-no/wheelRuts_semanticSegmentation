@@ -64,7 +64,8 @@ def tile_ortho(ortho_path, tile_size_m, buffer_size_m, format_tiles):
     shape_path=ortho_folder_path+"/"+ortho_name+"_boundary.shp"
     ## Run gdal_polygonize.py to get boundaries from alpha band (band 4)
     #%run /home/datascience/cnn_wheel_ruts/gdal_polygonize.py $ortho_path -b 4 $shape_path
-    os.chdir("/home/datascience/cnn_wheel_ruts/")
+    #os.chdir("/home/datascience/cnn_wheel_ruts/")
+    os.chdir("/scripts/")
     command_polygonize = "gdal_polygonize.py "+ ortho_path + " -b 4 " + shape_path
     print(os.popen(command_polygonize).read())
     ## Select polygon that has DN equal to 255, indicating the area where drone data is available for
@@ -82,7 +83,7 @@ def tile_ortho(ortho_path, tile_size_m, buffer_size_m, format_tiles):
            os.makedirs(tiles_dir)    
     tileIndex_name=ortho_name+"_tile_index" # define name for output tile index shapefile
     ## Run gdal_retile.py (can take some minutes) 
-    os.chdir("/home/datascience/cnn_wheel_ruts/")
+    #os.chdir("/home/datascience/cnn_wheel_ruts/")
      #%run /home/datascience/cnn_wheel_ruts/gdal_retile.py -targetDir $tiles_dir $ortho_path -overlap $buffer_size_px -ps $tile_size_noBNuffer_px $tile_size_noBNuffer_px -of PNG -co WORLDFILE=YES -tileIndex $tileIndex_name -tileIndexField ID
     if format_tiles=="PNG":
         command_retile = "gdal_retile.py -targetDir " + tiles_dir + " " + ortho_path+ " -overlap " + str(buffer_size_px) + " -ps "+str(tile_size_px) + " " + str(tile_size_px) + " -of PNG -co WORLDFILE=YES -tileIndex "+ tileIndex_name + " -tileIndexField ID"
@@ -130,7 +131,7 @@ def predict_wheelRuts(png_dir):
     
     # run inference
     predict_multiple( 
-      checkpoints_path="/home/datascience/cnn_wheel_ruts/resnet_unet_rgb_20m_grp1_patch" , #path to weights (stored model .json file)
+      checkpoints_path="/model/resnet_unet_rgb_20m_grp1_patch" , #path to weights (stored model .json file)
       inp_dir=png_dir , #path to files to be predicted (.png images)
       out_dir=output_dir #path to predicted files - would be in .png format
     )
