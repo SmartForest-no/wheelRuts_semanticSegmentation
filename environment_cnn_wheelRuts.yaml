@@ -13,9 +13,5 @@ dependencies:
   - geopandas
   - pip
   - rasterio
-  - pip:
-    - tensorflow==2.2
-    - opencv-python
-    - keras==2.3.0
 
 
