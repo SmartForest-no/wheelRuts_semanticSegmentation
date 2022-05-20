@@ -29,6 +29,8 @@ if __name__ == '__main__':
 
     for ortho_path in ortho_to_process:
         
+        orig_dir= os.getcwd()
+        model_dir= os.getcwd()+"/model/"
         # define some basic parameters
         tile_size_m= 20 # length of the side of each tile in meters (should NOT change this as this is the size that has been used in the training)
         buffer_size_m= 2 # size of buffer around each tile 
@@ -37,6 +39,7 @@ if __name__ == '__main__':
         
         # 3 - Split large orthomosaic into small tiles (20 meters side)
         print("Tiling orthomosaic..........")
+        print("directory:"+os.getcwd())
         tile_ortho(ortho_path, tile_size_m, buffer_size_m, format_tiles="PNG")
         
         
@@ -45,8 +48,8 @@ if __name__ == '__main__':
         print("Predicting wheel-ruts..........")
 
         os.chdir(os.path.dirname(os.path.realpath(__file__)))
-        tiles_dir=os.path.dirname(ortho_path)+"/tiles_dir"
-        predict_wheelRuts(tiles_dir)
+        tiles_dir=os.path.dirname(ortho_path)+"/tiles_png"
+        predict_wheelRuts(tiles_dir, model_dir)
         
         
         
@@ -54,7 +57,7 @@ if __name__ == '__main__':
         print("Mosaicking results..........")
 
         ## Get orthomosaic name and EPGS code
-        tiles_dir=os.path.dirname(ortho_path)+"/tiles_dir"
+        #tiles_dir=os.path.dirname(ortho_path)+"/tiles_dir"
         ### get name of the orthomosaic/drone project and the path where it's stored
         ortho_name=Path(ortho_path).stem # ortho name
         ortho_folder_path=os.path.dirname(ortho_path) # get path name for the folder where the orthomosaic is stored
