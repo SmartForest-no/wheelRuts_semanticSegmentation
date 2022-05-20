@@ -1,5 +1,5 @@
 import os, glob,shutil
-os.chdir("/home/datascience/cnn_wheel_ruts")
+#os.chdir("/home/datascience/cnn_wheel_ruts")
 from keras_segmentation.predict import predict_multiple #importing predict function from keras 
 from osgeo import gdal, ogr, osr
 from pathlib import Path
@@ -9,8 +9,8 @@ import rasterio as rio
 import numpy as np
 from cv2 import cv2
 # load my functions
-os.chdir("/home/datascience/utils")
-from tools import tile_ortho, predict_wheelRuts, mosaic_predictions_raster_semantic_seg
+#os.chdir("/home/datascience/utils")
+from scripts.tools import tile_ortho, predict_wheelRuts, mosaic_predictions_raster_semantic_seg
 
 
 if __name__ == '__main__':
@@ -44,7 +44,7 @@ if __name__ == '__main__':
         # 4 - Inference on tiled pngs
         print("Predicting wheel-ruts..........")
 
-        os.chdir("/home/datascience/cnn_wheel_ruts")
+        os.chdir(os.path.dirname(os.path.realpath(__file__)))
         tiles_dir=os.path.dirname(ortho_path)+"/tiles_dir"
         predict_wheelRuts(tiles_dir)
         
