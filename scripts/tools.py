@@ -121,7 +121,7 @@ def tile_ortho(ortho_path, tile_size_m, buffer_size_m, format_tiles):
 # arguments: 
 # - png_dir= directory where png tiles (20 m side) are stored
 ##########################################################################################################################################################################
-def predict_wheelRuts(png_dir):
+def predict_wheelRuts(png_dir, model_dir):
     
     # define output path
     output_dir= png_dir+'/predictions'
@@ -130,9 +130,10 @@ def predict_wheelRuts(png_dir):
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
     
+    os.chdir(model_dir)
     # run inference
     predict_multiple( 
-      checkpoints_path="/model/resnet_unet_rgb_20m_grp1_patch" , #path to weights (stored model .json file)
+      checkpoints_path="resnet_unet_rgb_20m_grp1_patch" , #path to weights (stored model .json file)
       inp_dir=png_dir , #path to files to be predicted (.png images)
       out_dir=output_dir #path to predicted files - would be in .png format
     )
