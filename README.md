@@ -18,6 +18,9 @@ git clone https://github.com/SmartForest-no/wheel-Rut-semantic-segmentation
 cd wheel-Rut-semantic-segmentation
 pip install -r requirements.txt
 ```
+In addition:
+- Download model weights and json file at: https://drive.google.com/drive/folders/1byb7jcAPiB9pr2gunJCbec7fRiwzI6BG?usp=sharing
+- Unzip the two files and and place them in the model folder
 
 # Usage
 ## Input
