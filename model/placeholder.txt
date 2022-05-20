@@ -1,1 +1,2 @@
-
+Download model weights at: https://drive.google.com/file/d/1l0tza91GyJ3P2srXcDzTCT7QdD0C9Gh6/view?usp=sharing 
+and place it in the model folder
