@@ -38,14 +38,14 @@ if __name__ == '__main__':
         
         
         # 3 - Split large orthomosaic into small tiles (20 meters side)
-        print("Tiling orthomosaic..........")
-        print("directory:"+os.getcwd())
+        print("Tiling orthomosaic..................................................................................................")
+
         tile_ortho(ortho_path, tile_size_m, buffer_size_m, format_tiles="PNG")
         
         
         
         # 4 - Inference on tiled pngs
-        print("Predicting wheel-ruts..........")
+        print("Predicting wheel-ruts..............................................................................................")
 
         os.chdir(os.path.dirname(os.path.realpath(__file__)))
         tiles_dir=os.path.dirname(ortho_path)+"/tiles_png"
@@ -54,7 +54,7 @@ if __name__ == '__main__':
         
         
         # 5 - Mosaic results
-        print("Mosaicking results..........")
+        print("Mosaicking results.................................................................................................")
 
         ## Get orthomosaic name and EPGS code
         #tiles_dir=os.path.dirname(ortho_path)+"/tiles_dir"
@@ -76,10 +76,7 @@ if __name__ == '__main__':
         
         ## run mosaicking function
         mosaic_predictions_raster_semantic_seg(predicted_dir , dir_orig_tiles, dir_export, EPSG_code, ortho_name)
-        
-        
-        
-        
+
         # END
         
         
