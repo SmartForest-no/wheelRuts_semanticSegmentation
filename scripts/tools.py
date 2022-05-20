@@ -66,7 +66,7 @@ def tile_ortho(ortho_path, tile_size_m, buffer_size_m, format_tiles):
     ## Run gdal_polygonize.py to get boundaries from alpha band (band 4)
     #%run /home/datascience/cnn_wheel_ruts/gdal_polygonize.py $ortho_path -b 4 $shape_path
     #os.chdir("/home/datascience/cnn_wheel_ruts/")
-    os.chdir("/scripts/")
+    os.chdir("scripts")
     command_polygonize = "gdal_polygonize.py "+ ortho_path + " -b 4 " + shape_path
     print(os.popen(command_polygonize).read())
     ## Select polygon that has DN equal to 255, indicating the area where drone data is available for
