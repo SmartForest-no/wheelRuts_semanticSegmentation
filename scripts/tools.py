@@ -2,7 +2,8 @@
 import os, glob, shutil
 from pathlib import Path
 import numpy as np
-from cv2 import cv2
+#from cv2 import cv2
+import cv2
 import rasterio as rio
 from rasterio.merge import merge
 from rasterio.plot import show
