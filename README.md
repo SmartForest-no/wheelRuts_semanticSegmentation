@@ -12,10 +12,10 @@ Figure 1. Example of the input and output of the developed method.
 conda create -n wheel_ruts_segment python=3.7.12
 
 # clone repo
-git clone https://github.com/SmartForest-no/wheel-Rut-semantic-segmentation
+git clone https://github.com/SmartForest-no/wheelRuts_semanticSegmentation
 
 # install requirements
-cd wheel-Rut-semantic-segmentation
+cd wheelRuts_semanticSegmentation
 pip install -r requirements.txt
 ```
 In addition:
