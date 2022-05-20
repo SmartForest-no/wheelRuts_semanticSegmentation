@@ -9,7 +9,7 @@ Figure 1. Example of the input and output of the developed method.
 
 ```
 # create new environment
-conda create -n wheel_ruts_segment
+conda create -n wheel_ruts_segment python=3.7.12
 
 # clone repo
 git clone https://github.com/SmartForest-no/wheel-Rut-semantic-segmentation
