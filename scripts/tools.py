@@ -155,7 +155,10 @@ def predict_wheelRuts(png_dir, model_dir):
 def mosaic_predictions_raster_semantic_seg(
     predicted_dir    # directory where predictions tiles from predict_wheelRuts function (.png format) are stored 
     , dir_orig_tiles # directory where original images from gdal_retile.py  (.png format) are stored 
-    , dir_export):   # directory where to export the mosaic
+    , dir_export
+    , EPSG_code
+    , ortho_name
+):   # directory where to export the mosaic
    
 
     # 1 - PREPARE ENVIRONMENT FOR MOSAIC CREATION
@@ -275,7 +278,7 @@ def mosaic_predictions_raster_semantic_seg(
                      }
                     )
     # Write the mosaic raster to disk
-    with rasterio.open(out_fp, "w", **out_meta) as dest:
+    with rio.open(out_fp, "w", **out_meta) as dest:
         dest.write(mosaic)
 
 
