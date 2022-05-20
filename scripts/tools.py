@@ -10,6 +10,32 @@ from osgeo import gdal, ogr, osr
 from keras_segmentation.predict import predict_multiple #importing predict function from keras 
 import geopandas as gpd
 import matplotlib.pyplot as plt
+import tkinter.filedialog as fd
+import tkinter as tk
+
+
+
+
+def directory_mode():
+    root = tk.Tk()
+    ortho_to_process = []
+    directory = fd.askdirectory(parent=root, title='Choose directory where orthomosaics (*.tif) are stored')
+    ortho_to_process = glob.glob(directory + '/**/*.tif', recursive=True)
+    root.destroy()
+    return ortho_to_process
+
+
+def file_mode():
+    root = tk.Tk()
+    ortho_to_process = fd.askopenfilenames(parent=root, title='Choose orthomosaic (*.tif) to process',
+                                                  filetypes=[("TIF", "*.tif")])
+    root.destroy()
+    return ortho_to_process
+
+
+
+
+
 
 ##########################################################################################################################################################################
 # function to split a large orthomosaic into small tiles for deep learning inference. The function allows to include a buffer around each tile so that the tiles are actually overlapping
