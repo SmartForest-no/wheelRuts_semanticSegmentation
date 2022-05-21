@@ -37,5 +37,4 @@ To run the segmentation on a new drone orthomosaic run:
 ```
 python run.py
 ```
-
-The default is the version that allows you to select a single file (file_mode) if you want to switch to the mode where is possible to feed an entire directory where several othomsaics are stored, then you should edit the ```run.py``` file by replacing ```file_mode``` with ```directory_mode```.
+This will open a window where you can select one orthomosaic to predict on. The default version (file_mode) allows you to select a single file but if you want to switch to the mode where is possible to feed an entire directory where several othomsaics are stored, then you should edit the ```run.py``` file by replacing ```file_mode``` with ```directory_mode```.
