@@ -34,6 +34,8 @@ The output consist of a binary raster with the same extent as the input orthomos
 
 ## How to run 🏃
 To run the segmentation on a new drone orthomosaic run:
-```python run.py```
+```
+python run.py
+```
 
 The default is the version that allows you to select a single file (file_mode) if you want to switch to the mode where is possible to feed an entire directory where several othomsaics are stored, then you should edit the ```run.py``` file by replacing ```file_mode``` with ```directory_mode```.
