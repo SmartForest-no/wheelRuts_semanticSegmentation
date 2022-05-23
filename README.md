@@ -74,8 +74,9 @@ python train.py
 An example dataset has been attached (data.zip) for understanding the layout of the training and validation images.
 Fully labelled images required for semantic segmentation (png/jpg)
 
-USING DIFFERENT MODELS:
-ORIGINAL REPOSITORY FOR CNN MODELS-- https://github.com/divamgupta/image-segmentation-keras 
+Using different architecture (model)
+
+Original repository for CNN models (keras_segmentation)-- https://github.com/divamgupta/image-segmentation-keras 
 
 model_name:
 #fcn_8
