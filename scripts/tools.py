@@ -132,10 +132,10 @@ def predict_wheelRuts(png_dir, model_dir):
         os.makedirs(output_dir)
         
     #os.chdir(model_dir)
-    print("Model directory ................................"+model_dir+ "resnet_unet_rgb_20m_grp1_patch")
+    print("Model directory ................................"+model_dir+ "resnet_unet_rgb_20mpatch_all")
     # run inference
     predict_multiple( 
-      checkpoints_path=model_dir + "resnet_unet_rgb_20m_grp1_patch" , #path to weights (stored model .json file)
+      checkpoints_path=model_dir + "resnet_unet_rgb_20mpatch_all" , #path to weights (stored model .json file)
       inp_dir=png_dir , #path to files to be predicted (.png images)
       out_dir=output_dir #path to predicted files - would be in .png format
     )
