@@ -44,5 +44,12 @@ This will open a window where you can select one orthomosaic to predict on. The 
 The base model has been trained for 50 epoch on the entire dataset described by [Bhatnagar et al. (2022)](https://zenodo.org/record/5746878#.YoeAzKhBxaQ). 
 we should fill in with some accuracy figures.......
 
+| model_name  | description | accuracy |
+| ------------- | ------------- | ------------- |
+| singleTrack_allData_25epochs  | output segmentation is a single track (model trained for 25 epochs) | 9999 |
+| singleTrack_allData_49epochs  | output segmentation is a single track (model trained for 25 epochs) | 9999 |
+| doubleTrack_32epochs  | output segmentation is a double track (model trained for 32 epochs) | 9999 |
+
+
 ## Training with your data
 Saheba can you please fill in here ...........
