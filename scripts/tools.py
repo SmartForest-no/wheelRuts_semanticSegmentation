@@ -280,9 +280,28 @@ def mosaic_predictions_raster_semantic_seg(
     # Write the mosaic raster to disk
     with rio.open(out_fp, "w", **out_meta) as dest:
         dest.write(mosaic)
+     # Write the mosaic raster to disk
+    with rio.open(out_fp, "w", **out_meta) as dest:
+        dest.write(mosaic)
 
+    # convert to binary map: if pixel value=1 is a wheel rut and if =0 then is NOT a wheel rut
+    r=rio.open(out_fp)
+    data= r.read()
 
+    lista=data.copy()
+
+    lista[np.where(lista<207)]=0 #non-wheel ruts
+    lista[np.where(lista>=207)]=1 #wheel ruts
+
+    out_fp_bin = str(dir_export)+"/"+ortho_name+"_wheelRuts_bin.tif"
+    
+    with rio.open(out_fp_bin,"w",driver=r.driver,height=r.height,width=r.width,count=r.count,crs=r.crs,transform=r.transform,dtype=data.dtype) as dst:
+    dst.write(lista)
+    
+    
     # CLEANUP ENVIRONMENT
+    # delete mosaic (non-binary)
+    shutil.rm(out_fp)
     # delete prediction folder
     os.chdir(predicted_dir)
     for j in pngs:    
