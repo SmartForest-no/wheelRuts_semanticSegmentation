@@ -77,21 +77,21 @@ Fully labelled images required for semantic segmentation (png/jpg)
 USING DIFFERENT MODELS:
 ORIGINAL REPOSITORY FOR CNN MODELS-- https://github.com/divamgupta/image-segmentation-keras 
 #model_name as follows
-#fcn_8	             
-#fcn_32	           
-#fcn_8_vgg	          
-#fcn_32_vgg	  	    
-#fcn_8_resnet50	
-#fcn_32_resnet50	
-#fcn_8_mobilenet	
-#fcn_32_mobilenet	
-#pspnet	
-#vgg_pspnet	
-#resnet50_pspnet	
-#unet_mini	
-#unet	
-#vgg_unet	
-#resnet50_unet	
+#fcn_8
+#fcn_32     
+#fcn_8_vgg          
+#fcn_32_vgg    
+#fcn_8_resnet50
+#fcn_32_resnet50
+#fcn_8_mobilenet
+#fcn_32_mobilenet
+#pspnet
+#vgg_pspnet
+#resnet50_pspnet
+#unet_mini
+#unet
+#vgg_unet
+#resnet50_unet
 #mobilenet_unet
 #segnet
 #vgg_segnet
