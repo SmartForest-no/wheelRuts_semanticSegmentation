@@ -27,7 +27,7 @@ In addition:
 
 # Usage 💻
 ## Input 🗺️ 
-The algorithm takes as input one orthomosaic or a folder with several orthomosaics in GeoTiff format (.tif)
+The algorithm takes as input one orthomosaic or a folder with several orthomosaics in GeoTiff format (.tif). The default version takes as input a single orthomosaic, to change see "How to run" section.
 
 ## Output 🚜
 The output consist of a binary raster with the same extent as the input orthomosaic where pixels with value of 1 correspond to wheel ruts and of value 0 correspond to background.
