@@ -39,8 +39,21 @@ python run.py
 ```
 This will open a window where you can select one orthomosaic to predict on. The default version (file_mode) allows you to select a single file but if you want to switch to the mode where is possible to feed an entire directory where several othomsaics are stored, then you should edit the ```run.py``` file by replacing ```file_mode``` with ```directory_mode```.
 
-# Additional information
-## Basic model
+### additional run options
+#### Use different tile size
+Select the tile size and buffer size to split the original orthomosaic into smaller tiles by using the arguments ```--tile_size_m``` (default is 20 m) and ```--buffer_size_m``` (default is 2 m), e.g.:
+```
+python run.py --tile_size_m 25 --buffer_size_m 3
+
+```
+#### Select a different model
+Select the model to run by using the argument ```--model_name``` (see next section for available models), e.g.:
+```
+python run.py --model_name doubleTrack_32epochs
+
+```
+
+# Available models
 The default model (singleTrack_allData_49epochs) has been trained for 50 epoch on the entire dataset described by [Bhatnagar et al. (2022)](https://zenodo.org/record/5746878#.YoeAzKhBxaQ). As 🍒 on top of the 🎂 we also provide additional models (see Table below). 
 
 | model_name  | description | accuracy |
@@ -53,6 +66,5 @@ The default model (singleTrack_allData_49epochs) has been trained for 50 epoch o
 To select the different models edit in ```run.py``` the ```model_name``` variable to fit your preferred models. The doubleTrack model can be interesting for some as it produces a segmentation for each single track of the forestry machines (see image below).
 
 
-
-## Training with your data
-Saheba can you please fill in here ...........
+# Training with your data
+In case you want to re-train the model using your own data......Saheba can you please fill in here ...........
