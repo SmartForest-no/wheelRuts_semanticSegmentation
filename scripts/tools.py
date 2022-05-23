@@ -296,7 +296,7 @@ def mosaic_predictions_raster_semantic_seg(
     out_fp_bin = str(dir_export)+"/"+ortho_name+"_wheelRuts_bin.tif"
     
     with rio.open(out_fp_bin,"w",driver=r.driver,height=r.height,width=r.width,count=r.count,crs=r.crs,transform=r.transform,dtype=data.dtype) as dst:
-    dst.write(lista)
+    	dst.write(lista)
     
     
     # CLEANUP ENVIRONMENT
