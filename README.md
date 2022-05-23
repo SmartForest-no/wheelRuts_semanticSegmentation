@@ -38,3 +38,11 @@ To run the segmentation on a new drone orthomosaic run:
 python run.py
 ```
 This will open a window where you can select one orthomosaic to predict on. The default version (file_mode) allows you to select a single file but if you want to switch to the mode where is possible to feed an entire directory where several othomsaics are stored, then you should edit the ```run.py``` file by replacing ```file_mode``` with ```directory_mode```.
+
+# Additional information
+## Basic model
+The base model has been trained for 50 epoch on the entire dataset described by [Bhatnagar et al. (2022)](https://zenodo.org/record/5746878#.YoeAzKhBxaQ). 
+we should fill in with some accuracy figures.......
+
+## Training with your data
+Saheba can you please fill in here ...........
