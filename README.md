@@ -72,5 +72,28 @@ In case you want to re-train the model using your own data
 python train.py
 ```
 An example dataset has been attached (data.zip) for understanding the layout of the training and validation images.
+Fully labelled images required for semantic segmentation (png/jpg)
 
-
+USING DIFFERENT MODELS:
+ORIGINAL REPOSITORY FOR CNN MODELS-- https://github.com/divamgupta/image-segmentation-keras 
+#model_name as follows
+#fcn_8	             
+#fcn_32	           
+#fcn_8_vgg	          
+#fcn_32_vgg	  	    
+#fcn_8_resnet50	
+#fcn_32_resnet50	
+#fcn_8_mobilenet	
+#fcn_32_mobilenet	
+#pspnet	
+#vgg_pspnet	
+#resnet50_pspnet	
+#unet_mini	
+#unet	
+#vgg_unet	
+#resnet50_unet	
+#mobilenet_unet
+#segnet
+#vgg_segnet
+#resnet50_segnet
+#mobilenet_segnet
