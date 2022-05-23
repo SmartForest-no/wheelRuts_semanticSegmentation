@@ -1,3 +1,5 @@
+## Training the wheel rut model for your own data ##
+
 from keras_segmentation.models.unet import resnet50_unet #or any other model (see comments at the end of the doc)
 
 #number of classes #no. of class is 'no. of labels + 1' as NaN values was given label ==0;
@@ -7,6 +9,8 @@ model = resnet50_unet(n_classes=n ,  input_height=1024, input_width=1024  ) #inp
 #recommendation: 1024 x 1024 
 
 epochs = 50
+
+#unzip data.zip to train the model with an example dataset
 
 model.train(
     train_images =  "wheelRuts_semanticSegmentation/data/train/image/",
