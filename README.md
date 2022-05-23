@@ -43,7 +43,7 @@ This will open a window where you can select one orthomosaic to predict on. The 
 #### Use different tile size
 Select the tile size and buffer size to split the original orthomosaic into smaller tiles by using the arguments ```--tile_size_m``` (default is 20 m) and ```--buffer_size_m``` (default is 2 m), e.g.:
 ```
-python run.py --tile_size_m 25 --buffer_size_m 3
+python run.py --tile_size_m 20 --buffer_size_m 2
 
 ```
 #### Select a different model
