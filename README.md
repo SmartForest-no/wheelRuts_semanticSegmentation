@@ -67,4 +67,10 @@ To select the different models edit in ```run.py``` the ```model_name``` variabl
 
 
 # Training with your data
-In case you want to re-train the model using your own data......Saheba can you please fill in here ...........
+In case you want to re-train the model using your own data
+```
+python train.py
+```
+An example dataset has been attached (data.zip) for understanding the layout of the training and validation images.
+
+
