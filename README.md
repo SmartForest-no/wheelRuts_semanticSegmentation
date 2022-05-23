@@ -54,7 +54,7 @@ python run.py --model_name doubleTrack_32epochs
 ```
 
 # Available models
-The default model (singleTrack_allData_49epochs) has been trained for 50 epoch on the entire dataset described by [Bhatnagar et al. (2022)](https://zenodo.org/record/5746878#.YoeAzKhBxaQ). As 🍒 on top of the 🎂 we also provide additional models (see Table below). 
+As 🍒 on top of the 🎂, in addition to the default model, we also provide additional models (see Table below). The default model (singleTrack_allData_49epochs) has been trained for 50 epoch on the entire dataset described by [Bhatnagar et al. (2022)](https://zenodo.org/record/5746878#.YoeAzKhBxaQ).  
 
 | model_name  | description | accuracy |
 | ------------- | ------------- | ------------- |
