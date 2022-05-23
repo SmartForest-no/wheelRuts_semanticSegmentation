@@ -11,6 +11,24 @@ import cv2
 # load my functions
 #os.chdir("/home/datascience/utils")
 from scripts.tools import tile_ortho, predict_wheelRuts, mosaic_predictions_raster_semantic_seg, file_mode, directory_mode
+import argparse
+
+FILE = Path(__file__).resolve()
+ROOT = FILE.parents[0]  # repo root directory
+
+
+def parse_opt(known=False):
+    parser = argparse.ArgumentParser()
+
+    # Select model for inference
+    parser.add_argument('--model_name', type=str, default=ROOT / 'model/singleTrack_allData_49epochs.pt', help='model weights')
+
+    # parameters for tiling orthomosaic
+    parser.add_argument('--tile_size_m', type=int, default=20, help='tile size (meters) for splitting orthomosaic')
+    parser.add_argument('--buffer_size_m', type=int, default=2, help='buffer size (meters) for tile overlap')
+	
+    opt = parser.parse_known_args()[0] if known else parser.parse_args()
+    return opt
 
 
 if __name__ == '__main__':
@@ -23,6 +41,10 @@ if __name__ == '__main__':
     
     
     """
+
+    opt = parse_opt()
+
+
     # ortho_to_process = directory_mode()
     # ortho_to_process = ['full_path_to_your_point_cloud.las', 'full_path_to_your_second_point_cloud.las', etc.]
     ortho_to_process = file_mode()
@@ -31,10 +53,11 @@ if __name__ == '__main__':
         
         orig_dir= os.getcwd()
         model_dir= os.getcwd()+"/model/"
+        
         # define some basic parameters
-        tile_size_m= 20 # length of the side of each tile in meters (should NOT change this as this is the size that has been used in the training)
-        buffer_size_m= 2 # size of buffer around each tile 
-        model_name="singleTrack_allData_49epochs" # select different models available in model folder
+        tile_size_m= opt.tile_size_m # length of the side of each tile in meters (should NOT change this as this is the size that has been used in the training)
+        buffer_size_m= opt.buffer_size_m # size of buffer around each tile 
+        model_name=opt.model_name # select different models available in model folder
         
         
         # 3 - Split large orthomosaic into small tiles (20 meters side)
