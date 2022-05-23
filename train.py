@@ -1,7 +1,6 @@
 ## Training the wheel rut model for your own data ##
 
-from keras_segmentation.models.unet import resnet50_unet #or any other model (see comments at the end of the doc)
-
+from keras_segmentation.models.unet import resnet50_unet #for running other pretrained architectures, please refer introduction of the repository
 #number of classes #no. of class is 'no. of labels + 1' as NaN values was given label ==0;
 n = 3
 
@@ -19,28 +18,3 @@ model.train(
     val_annotations = "wheelRuts_semanticSegmentation/data/validation/label/", #optional
     checkpoints_path = "weights/singleTrack_allData_25epochs" , #give a new name if training from scratch / use the name from the folder wheelRuts_semanticSegmentation/model to build on pre-trained model.
     epochs=epochs)
-
-
-### USING DIFFERENT MODELS - OTHER THAN RESNET50+UNET ## 
-## ORIGINAL REPOSITORY FOR CNN MODELS-- https://github.com/divamgupta/image-segmentation-keras ##
-#model_name	
-#fcn_8	             
-#fcn_32	           
-#fcn_8_vgg	          
-#fcn_32_vgg	  	    
-#fcn_8_resnet50	
-#fcn_32_resnet50	
-#fcn_8_mobilenet	
-#fcn_32_mobilenet	
-#pspnet	
-#vgg_pspnet	
-#resnet50_pspnet	
-#unet_mini	
-#unet	
-#vgg_unet	
-#resnet50_unet	
-#mobilenet_unet
-#segnet
-#vgg_segnet
-#resnet50_segnet
-#mobilenet_segnet
