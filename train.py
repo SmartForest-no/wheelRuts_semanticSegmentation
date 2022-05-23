@@ -11,8 +11,8 @@ epochs = 50
 model.train(
     train_images =  "wheelRuts_semanticSegmentation/data/train/image/",
     train_annotations = "wheelRuts_semanticSegmentation/data/train/label/",
-    validation_images =  "wheelRuts_semanticSegmentation/data/validation/image/", #optional
-    validation_annotations = "wheelRuts_semanticSegmentation/data/validation/label/", #optional
+    val_images =  "wheelRuts_semanticSegmentation/data/validation/image/", #optional
+    val_annotations = "wheelRuts_semanticSegmentation/data/validation/label/", #optional
     checkpoints_path = "weights/singleTrack_allData_25epochs" , #give a new name if training from scratch / use the name from the folder wheelRuts_semanticSegmentation/model to build on pre-trained model.
     epochs=epochs)
 
