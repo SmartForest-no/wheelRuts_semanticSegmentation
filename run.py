@@ -34,7 +34,7 @@ if __name__ == '__main__':
         # define some basic parameters
         tile_size_m= 20 # length of the side of each tile in meters (should NOT change this as this is the size that has been used in the training)
         buffer_size_m= 2 # size of buffer around each tile 
-        
+        model_name="singleTrack_allData_49epochs" # select different models available in model folder
         
         
         # 3 - Split large orthomosaic into small tiles (20 meters side)
@@ -49,7 +49,7 @@ if __name__ == '__main__':
 
         os.chdir(os.path.dirname(os.path.realpath(__file__)))
         tiles_dir=os.path.dirname(ortho_path)+"/tiles_png"
-        predict_wheelRuts(tiles_dir, model_dir)
+        predict_wheelRuts(tiles_dir, model_dir, model_name)
         
         
         
