@@ -301,7 +301,7 @@ def mosaic_predictions_raster_semantic_seg(
     
     # CLEANUP ENVIRONMENT
     # delete mosaic (non-binary)
-    shutil.rm(out_fp)
+    os.remove(out_fp)
     # delete prediction folder
     os.chdir(predicted_dir)
     for j in pngs:    
