@@ -69,16 +69,30 @@ To select the different models edit in ```run.py``` the ```model_name``` variabl
 # Training with your data
 In case you want to re-train the model using your own data
 ```
-python train.py
+python train_owndata.py
 ```
 An example dataset has been attached (data.zip) for understanding the layout of the training and validation images.
 Fully labelled images required for semantic segmentation (png/jpg)
+
+For changing the training parameters, see wheelRuts_semanticSegmentation/keras_segmentation/train.py line 55 to make changes in batch size, optimizer, augmentation, etc.
 
 # Using different architecture (model):
 
 Original repository for CNN models (keras_segmentation)-- https://github.com/divamgupta/image-segmentation-keras 
 
-In train.py, replace the model name with model_name:
+```
+In wheelRuts_semanticSegmentation/train_owndata.py line 3, change:
+from keras_segmentation.models.'base_model' import 'model_name'
+```
+replace the base model with base_model:
+#fcn 
+#unet
+#segnet
+#vgg16
+#mobilenet
+#pspnet
+
+replace the model name with model_name:
 #fcn_8
 #fcn_32
 #fcn_8_vgg
