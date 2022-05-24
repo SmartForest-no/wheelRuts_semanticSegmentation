@@ -76,40 +76,19 @@ Fully labelled images required for semantic segmentation (png/jpg)
 
 For changing the training parameters, see wheelRuts_semanticSegmentation/keras_segmentation/train.py line 55 to make changes in batch size, optimizer, augmentation, etc.
 
-# Using different architecture (model):
+# Using different architecture:
 
 Original repository for CNN models (keras_segmentation)-- https://github.com/divamgupta/image-segmentation-keras 
 
 ```
 In wheelRuts_semanticSegmentation/train_owndata.py line 3, change:
-from keras_segmentation.models.'base_model' import 'model_name'
+from keras_segmentation.models.'decoder' import 'encoder'
 ```
-replace the base model with base_model:
-#fcn 
-#unet
-#segnet
-#vgg16
-#mobilenet
-#pspnet
+replace the decoder with:
+fcn | unet | segnet | vgg16 | mobilenet| pspnet
 
-replace the model name with model_name:
-#fcn_8
-#fcn_32
-#fcn_8_vgg
-#fcn_32_vgg
-#fcn_8_resnet50
-#fcn_32_resnet50
-#fcn_8_mobilenet
-#fcn_32_mobilenet
-#pspnet
-#vgg_pspnet
-#resnet50_pspnet
-#unet_mini
-#unet
-#vgg_unet
-#resnet50_unet
-#mobilenet_unet
-#segnet
-#vgg_segnet
-#resnet50_segnet
-#mobilenet_segnet
+replace the encoder name with:
+fcn_8 | fcn_32 | fcn_8_vgg|fcn_32_vgg|fcn_8_resnet50|fcn_32_resnet50|
+fcn_8_mobilenet|fcn_32_mobilenet|pspnet|vgg_pspnet|resnet50_pspnet|unet_mini|
+unet|vgg_unet|resnet50_unet|mobilenet_unet|segnet|vgg_segnet|
+resnet50_segnet|mobilenet_segnet
