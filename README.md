@@ -85,10 +85,10 @@ In wheelRuts_semanticSegmentation/train_owndata.py line 3, change:
 from keras_segmentation.models.'decoder' import 'encoder'
 ```
 replace the decoder with:
-fcn | unet | segnet | vgg16 | mobilenet| pspnet
+fcn | unet | segnet | vgg16 | mobilenet | pspnet
 
 replace the encoder name with:
-fcn_8 | fcn_32 | fcn_8_vgg|fcn_32_vgg|fcn_8_resnet50|fcn_32_resnet50|
-fcn_8_mobilenet|fcn_32_mobilenet|pspnet|vgg_pspnet|resnet50_pspnet|unet_mini|
-unet|vgg_unet|resnet50_unet|mobilenet_unet|segnet|vgg_segnet|
-resnet50_segnet|mobilenet_segnet
+fcn_8 | fcn_32 | fcn_8_vgg | fcn_32_vgg | fcn_8_resnet50 | fcn_32_resnet50 |
+fcn_8_mobilenet| fcn_32_mobilenet | pspnet | vgg_pspnet | resnet50_pspnet | unet_mini |
+unet | vgg_unet | resnet50_unet | mobilenet_unet | segnet | vgg_segnet |
+resnet50_segnet | mobilenet_segnet |
