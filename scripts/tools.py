@@ -7,6 +7,7 @@ import cv2
 import rasterio as rio
 from rasterio.merge import merge
 from rasterio.plot import show
+from rasterio.features import sieve, shapes
 from osgeo import gdal, ogr, osr
 from keras_segmentation.predict import predict_multiple #importing predict function from keras 
 import geopandas as gpd
@@ -160,7 +161,6 @@ def mosaic_predictions_raster_semantic_seg(
     , ortho_name
 ):   # directory where to export the mosaic
    
-
     # 1 - PREPARE ENVIRONMENT FOR MOSAIC CREATION
     # move wlds from original images folder to prediction folder
     os.chdir(dir_orig_tiles)
@@ -298,10 +298,24 @@ def mosaic_predictions_raster_semantic_seg(
     with rio.open(out_fp_bin,"w",driver=r.driver,height=r.height,width=r.width,count=r.count,crs=r.crs,transform=r.transform,dtype=data.dtype) as dst:
     	dst.write(lista)
     
+    # remove small island pixels (areas smaller than 2.5 m2 at 5 cm GSD are removed)  
+    out_fp_sieve = str(dir_export)+"/"+ortho_name+"_wheelRuts_predictions.tif"
+    
+    with rio.open(out_fp_bin) as src:
+        shade = src.read(1)
+        
+    sieved = sieve(shade, 1000, out=np.zeros(src.shape, src.dtypes[0]))
+
+    # Write out the sieved raster.
+    kwargs = src.meta
+    kwargs['transform'] = rio.transform.guard_transform(kwargs['transform'])
+    with rio.open(out_fp_sieve, 'w', **kwargs) as dst:
+    	dst.write(sieved, indexes=1) 
     
     # CLEANUP ENVIRONMENT
     # delete mosaic (non-binary)
     os.remove(out_fp)
+    os.remove(out_fp_bin)
     # delete prediction folder
     os.chdir(predicted_dir)
     for j in pngs:    
