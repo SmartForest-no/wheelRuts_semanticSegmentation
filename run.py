@@ -62,7 +62,6 @@ if __name__ == '__main__':
         
         # 3 - Split large orthomosaic into small tiles (20 meters side)
         print("Tiling orthomosaic..................................................................................................")
-
         tile_ortho(ortho_path, tile_size_m, buffer_size_m, format_tiles="PNG")
         
         
@@ -97,7 +96,10 @@ if __name__ == '__main__':
         dir_orig_tiles=os.path.split(predicted_dir)[0]
         dir_export=os.path.split(dir_orig_tiles)[0]
         
+
         ## run mosaicking function
+        root_dir= os.chdir(orig_dir)
+        print("original_directory:.......................... ",orig_dir)
         mosaic_predictions_raster_semantic_seg(predicted_dir , dir_orig_tiles, dir_export, EPSG_code, ortho_name)
 
         # END
