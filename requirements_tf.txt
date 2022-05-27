@@ -1,5 +1,4 @@
 libtiff
-os
 glob
 cv2
 numpy
