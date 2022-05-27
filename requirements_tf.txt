@@ -1,7 +1,6 @@
 libtiff
-glob
-cv2
-numpy
+glob2
+opencv-python
 matplotlib
 tensorflow
 sklearn
