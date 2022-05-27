@@ -1,0 +1,8 @@
+libtiff
+os
+glob
+cv2
+numpy
+matplotlib
+tensorflow
+sklearn
