@@ -92,3 +92,31 @@ fcn_8 | fcn_32 | fcn_8_vgg | fcn_32_vgg | fcn_8_resnet50 | fcn_32_resnet50 |
 fcn_8_mobilenet| fcn_32_mobilenet | pspnet | vgg_pspnet | resnet50_pspnet | unet_mini |
 unet | vgg_unet | resnet50_unet | mobilenet_unet | segnet | vgg_segnet |
 resnet50_segnet | mobilenet_segnet |
+
+# Going beyond 3 bands (RGB) 
+For using multispectral images (for example, RGB + DEM, i.e., 4 bands), tensorflow based UNET architecture (wheelRuts_semanticSegmentation/orig_unet_model.py). The UNET architecture is based on the original UNET model (https://arxiv.org/abs/1505.04597). Can handle any dimension of data (multispectral) with variable sizing. All the tiles are resampled to a specific pixel size (height x width) by default in pre-processing (user defined).
+
+The previously installed environment should be sufficient to run the script, but in case there are error, install new requirements. 
+```
+#install new requirements (if the previous environment doesn't work)
+pip install -r requirements_tf.txt
+```
+Download the sample RGB+DEM 4 bands images + labels from data_rgbdem.zip 
+
+To create, train and test the model:
+```
+python wheelUNet_RGBDEM.py 
+```
+To test directly on the test data using a pre-trained model:
+- Download model (.hdf5) file from: https://drive.google.com/drive/folders/1byb7jcAPiB9pr2gunJCbec7fRiwzI6BG?usp=sharing
+- Unzip the two files and and place them in the model folder
+
+```
+#to directly predict using pre-trained model for RGB + DEM (4 bands) imagery
+python wheelUNet_RGBDEM_trainedmodel.py
+```
+
+Please make sure the paths of the images, labels, and weights is given properly in the script. 
+
+
+
