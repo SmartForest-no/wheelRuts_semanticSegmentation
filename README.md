@@ -67,14 +67,14 @@ To select the different models edit in ```run.py``` the ```model_name``` variabl
 
 
 # Training with your data
-In case you want to re-train the model using your own data
+In case you want to re-train the model using your own data :sunglasses:
 ```
 python train_owndata.py
 ```
 An example dataset has been attached (data.zip) for understanding the layout of the training and validation images.
-Fully labelled images required for semantic segmentation (png/jpg)
+Fully labelled images required for semantic segmentation (png/jpg).
 
-For changing the training parameters, see wheelRuts_semanticSegmentation/keras_segmentation/train.py line 55 to make changes in batch size, optimizer, augmentation, etc.
+For changing the training parameters, see wheelRuts_semanticSegmentation/keras_segmentation/train.py line 55 to make changes in batch size, optimizer, augmentation, etc. 
 
 # Using different architecture:
 
@@ -107,7 +107,7 @@ To create, train and test the model:
 ```
 python wheelUNet_RGBDEM.py 
 ```
-If there is error related to libtiff library (error in reading header). Please copy paste tiff_h_4_1_0.py (provided with the scripts) in your virtual environment site packages: wheelRuts/lib/python3.8/site-packages/libtiff and this error would be debugged.
+If there is error related to libtiff library (error in reading header :ghost:). Please copy paste tiff_h_4_1_0.py (provided with the scripts) in your virtual environment site packages: wheelRuts/lib/python3.8/site-packages/libtiff and this error would be debugged.
 
 To test directly on the test data using a pre-trained model:
 - Download model (.hdf5) file from: https://drive.google.com/drive/folders/1byb7jcAPiB9pr2gunJCbec7fRiwzI6BG?usp=sharing
