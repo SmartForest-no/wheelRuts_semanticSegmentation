@@ -107,6 +107,8 @@ To create, train and test the model:
 ```
 python wheelUNet_RGBDEM.py 
 ```
+If there is error related to libtiff library (error in reading header). Please copy paste tiff_h_4_1_0.py (provided with the scripts) in your virtual environment site packages: wheelRuts/lib/python3.8/site-packages/libtiff and this error would be debugged.
+
 To test directly on the test data using a pre-trained model:
 - Download model (.hdf5) file from: https://drive.google.com/drive/folders/1byb7jcAPiB9pr2gunJCbec7fRiwzI6BG?usp=sharing
 - Unzip the two files and and place them in the model folder
@@ -117,6 +119,3 @@ python wheelUNet_RGBDEM_trainedmodel.py
 ```
 
 Please make sure the paths of the images, labels, and weights is given properly in the script. 
-
-
-
