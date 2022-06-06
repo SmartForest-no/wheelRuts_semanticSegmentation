@@ -36,7 +36,33 @@ def file_mode():
 
 
 
+##########################################################################################################################################################################
+# function to convert shp annotations to raster mask (binary only)
+def shp2mask(path_to_raster, annotations_shp, out_file_path, gdal_utils_path):
+    fn_ras = path_to_raster
+    fn_vec = annotations_shp
+    out_net= path_annotated_data+"/"+proj_name+"_mask.tif"
+    ras_ds = gdal.Open(fn_ras) 
+    vec_ds = ogr.Open(fn_vec) 
+    lyr = vec_ds.GetLayer() 
+    geot = ras_ds.GetGeoTransform()
 
+    drv_tiff = gdal.GetDriverByName("GTiff") 
+    chn_ras_ds = drv_tiff.Create(out_net, ras_ds.RasterXSize, ras_ds.RasterYSize, 1, gdal.GDT_Float32)
+    chn_ras_ds.SetGeoTransform(geot)
+
+    gdal.RasterizeLayer(chn_ras_ds, [1], lyr, options=['ATTRIBUTE=id'])
+    #chn_ras_ds.GetRasterBand(1).SetNoDataValue(0.0) 
+    chn_ras_ds = None
+    
+    # get boundary shp
+    shape_path=os.path.dirname(path_to_raster)+"/"+proj_name+"_boundary.shp"
+    os.chdir(gdal_utils_path)
+    command_polygonize = "gdal_polygonize.py "+ i + " -b 4 " + shape_path
+    print(os.popen(command_polygonize).read())
+    ## Select polygon that has DN equal to 255, indicating the area where drone data is available for
+    polys = gpd.read_file(shape_path)
+    polys[polys['DN']>0].to_file(shape_path)
 
 
 ##########################################################################################################################################################################
