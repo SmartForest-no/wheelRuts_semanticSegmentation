@@ -49,7 +49,7 @@ class CheckpointsCallback(Callback):
 
 
 def train(model,
-          train_images,
+         train_images,
          train_annotations,
          input_height=None,
          input_width=None,
