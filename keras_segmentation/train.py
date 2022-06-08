@@ -58,9 +58,9 @@ def train(model,
          checkpoints_path=None,
          epochs=5,
          batch_size=5,
-         validate=False,
-         val_images=None,
-         val_annotations=None,
+         validate=False, # switch to true if validation images are provided
+         val_images=None, # remove "=None" if above is true
+         val_annotations=None, # remove "=None" if above is true
          val_batch_size=2,
          auto_resume_checkpoint=True,
          load_weights=None,
@@ -150,7 +150,7 @@ def train(model,
             n_classes, input_height, input_width, output_height, output_width)
 
     callbacks = [
-        CheckpointsCallback(checkpoints_path)
+        CheckpointsCallback(checkpoints_path) # save_best_only=True
     ]
 
     if not validate:
