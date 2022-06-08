@@ -12,9 +12,9 @@ epochs = 50
 #unzip data.zip to train the model with an example dataset
 
 model.train(
-    train_images =  "wheelRuts_semanticSegmentation/data/train/image/",
-    train_annotations = "wheelRuts_semanticSegmentation/data/train/label/",
-    #val_images =  "wheelRuts_semanticSegmentation/data/validation/image/", #optional
-    #val_annotations = "wheelRuts_semanticSegmentation/data/validation/label/", #optional
-    checkpoints_path = "weights/singleTrack_allData_25epochs" , #give a new name if training from scratch / use the name from the folder wheelRuts_semanticSegmentation/model to build on pre-trained model.
+    train_images =  "data/train/image/",
+    train_annotations = "data/train/label/",
+    val_images =  "data/validation/image/", #optional
+    val_annotations = "data/validation/label/", #optional
+    checkpoints_path = "model/singleTrack_allData_25epochs" , #give a new name if training from scratch / use the name from the folder wheelRuts_semanticSegmentation/model to build on pre-trained model.
     epochs=epochs)
