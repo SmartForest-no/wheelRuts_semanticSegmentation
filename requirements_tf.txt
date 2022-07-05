@@ -1,6 +1,0 @@
-libtiff
-glob2
-opencv-python
-matplotlib
-tensorflow
-sklearn
