@@ -49,18 +49,18 @@ python run.py --tile_size_m 20 --buffer_size_m 2
 #### Select a different model
 Select the model to run by using the argument ```--model_name``` (see next section for available models), e.g.:
 ```
-python run.py --model_name doubleTrack_32epochs
+python run.py --model_name singleTrack_allData_25epochs
 
 ```
 
 # Available models
 As 🍒 on top of the 🎂, in addition to the default model, we also provide additional models (see Table below). The default model (singleTrack_allData_49epochs) has been trained for 50 epoch on the entire dataset described by [Bhatnagar et al. (2022)](https://zenodo.org/record/5746878#.YoeAzKhBxaQ).  
 
-| model_name  | description | accuracy |
-| ------------- | ------------- | ------------- |
-| singleTrack_allData_25epochs  | output segmentation is a single track (model trained for 25 epochs) | 9999 |
-| singleTrack_allData_49epochs  | output segmentation is a single track (model trained for 25 epochs) | 9999 |
-| doubleTrack_32epochs  | output segmentation is a double track (model trained for 32 epochs) | 9999 |
+| model_name  | description |
+| ------------- | ------------- |
+| singleTrack_allData_25epochs  | output segmentation is a single track (model trained for 25 epochs) |
+| singleTrack_allData_49epochs  | output segmentation is a single track (model trained for 25 epochs) |
+| doubleTrack_32epochs  | output segmentation is a double track (work in progress) |
 
 
 To select the different models edit in ```run.py``` the ```model_name``` variable to fit your preferred models. The doubleTrack model can be interesting for some as it produces a segmentation for each single track of the forestry machines (see image below).
